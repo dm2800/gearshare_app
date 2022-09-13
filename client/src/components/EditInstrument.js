@@ -82,11 +82,19 @@ const editSubmitHandler = (e)=> {
     return(
         <div>
 {/* reusable component for header :)  */}
-            <Header
-            titleText = {"Instruments"}
-            link = {"/new"}
-            linkText = {"Add New Instrument"}
-            />
+<header>
+                <section class = "section-intro bg-primary padding-y-lg">
+                <div class ="container">
+                <h1>GearShare</h1>
+                <h4>Lend & borrow your favorite gear.</h4>
+                </div>
+                </section>
+
+
+
+                <Link to ={"/"}>Home</Link>
+            </header>
+            <br></br>
 {/* reusable component for Form */}
             <Form
             submitHandler= {editSubmitHandler}

@@ -3,19 +3,20 @@ import axios from "axios";
 import {Link, useParams, useNavigate} from "react-router-dom";
 import Header from './Header';
 import Form from './Form';
+import Button from 'react-bootstrap/esm/Button';
 
 
 //axios, useEffect, useState, Link
 
 const NewInstrument = (props) => {
 
-    // const [title, setTitle] = useState("");
-    // const [price, setPrice] = useState();
-    // const [description, setDescription] = useState("");
-    // const [image, setImage] = useState("");
 
-
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState({
+        title: {},
+        price: {},
+        description: {},
+        image: {},
+    });
 
     const [newInstrument, setNewInstrument] = useState({
         title: "",
@@ -42,6 +43,7 @@ const NewInstrument = (props) => {
                 console.log("err.response.data", err.response.data);
                 console.log("err.response.data.errors", err.response.data.errors);
                 setErrors(err.response.data.errors);
+                return 
             })
         }
     
@@ -72,12 +74,30 @@ const NewInstrument = (props) => {
     return(
         <div>
 {/* new Header component */}
-            <Header
+            {/* <Header
             titleText = {"GearShare"}
             subText = {"Gear for sharing"}
             link = {"/"}
             linkText = {"Home"}
-            />
+            /> */}
+
+<header>
+    <section class = "section-intro bg-primary padding-y-lg">
+                <div class ="container">
+                <h1>GearShare</h1>
+                <h6>Lend & borrow your favorite gear.</h6>
+                </div>
+                
+                </section>
+                <Link to ={"/"}>
+                    
+                <Button variant = "info">Home</Button>
+
+                </Link>
+                
+</header>
+<br></br>
+            
 
 {/* new Form component  */}
             <Form

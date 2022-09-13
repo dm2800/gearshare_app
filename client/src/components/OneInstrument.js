@@ -5,6 +5,7 @@ import Header from './Header';
 
 
 
+
 const OneInstrument = (props) => {
 
     const [instrument, setInstrument] = useState({});
@@ -38,17 +39,22 @@ const OneInstrument = (props) => {
     }
 
     return(
-        <div>
+        <div>            <header>
+        <section class = "section-intro bg-primary padding-y-lg">
+        <div class ="container">
+        <h1>GearShare</h1>
+        <h4>Lend & borrow your favorite gear.</h4>
+        </div>
+        </section>
 
-            <Header
-            titleText = {instrument.title}
-            link = {"/new"}
-            linkText = {"Add New Instrument"}
-            />
+        <Link to = {'/'} class = "btn btn-info">Home</Link>
 
-        <Link to = {'/'}>Home</Link>
+        
+    </header>
+    <br></br>
+    <h2>{instrument.title}</h2>
 
-            <p>Rent for ${instrument.price}/day</p>
+            <p>Borrow for ${instrument.price}/day</p>
             <p>{instrument.description}</p>
             <img src = {instrument.image}></img>
             <div>

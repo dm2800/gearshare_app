@@ -1,3 +1,5 @@
+import Button from "react-bootstrap/esm/Button";
+
 const Form = (props)=>{
 
 
@@ -17,6 +19,7 @@ const Form = (props)=>{
                 }
 
                 </div>
+                <br></br>
                 <div>
                     <label>Price</label>
                     <input name = "price" value = {instrument.price} onChange = {onChangeHandler} type = "text"></input>
@@ -27,6 +30,7 @@ const Form = (props)=>{
                 }
 
                 </div>
+                <br></br>
                 <div>
                     <label>Description</label>
                     <input name = "description" value = {instrument.description} onChange = {onChangeHandler} type = "text"></input>
@@ -36,6 +40,7 @@ const Form = (props)=>{
                     :null 
                 }
                 </div>
+                <br></br>
                 <div>
                     <label>Image</label>
                     <input name = "image" value = {instrument.image} onChange = {onChangeHandler} type = "text"></input>
@@ -45,7 +50,13 @@ const Form = (props)=>{
                     :null 
                 }
                 </div>
-                <button>{buttonText}</button>
+                <br></br>
+                <button>
+                <Button>{buttonText}</Button>
+                
+                </button>
+
+                
             </form>
         </div>
     )

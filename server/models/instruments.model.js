@@ -21,7 +21,7 @@ const InstrumentSchema = new mongoose.Schema({
 
     image: {
         type: String,
-        required: [true, "because we love pictures"]
+        required: [true, "Image required."]
     }
 
 }, {timestamps: true})

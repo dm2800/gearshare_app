@@ -11,6 +11,10 @@ module.exports = {
                 console.log(newInstrument);
                 res.json(newInstrument);
             })
+            .catch((err)=> {
+                console.log(err);
+                res.status(400).json(err);
+            })
     }, 
 
     //GET ONE 

@@ -2,6 +2,13 @@ import React, {useState, useEffect} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
+
 
 const AllInstruments = (props) => {
     const [instrumentList, setInstrumentList] = useState([]);
@@ -34,10 +41,47 @@ const AllInstruments = (props) => {
     return (
         <div>
 
+
+
             <header>
+                <section class = "section-intro bg-primary padding-y-lg">
+                <div class ="container">
                 <h1>GearShare</h1>
-                <Link to ={"/new"}>List Your Gear</Link>
+                <h6>Lend & borrow your favorite gear.</h6>
+                </div>
+                </section>
+                <Link to ={"/new"}>
+                    
+                    <Button variant = "info">List Your Gear</Button>
+                    
+                </Link>
             </header>
+
+
+            <Nav
+      activeKey="/home"
+      onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+    >
+      <Nav.Item>
+        <Nav.Link href="/home">Guitars</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="link-1">Drums</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="link-2">Bass</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="Keyboards/Piano" disabled>
+          Disabled
+        </Nav.Link>
+      </Nav.Item>
+    </Nav>
+
+
+
+
+            
             <br></br>
 
             {/* <Header
@@ -47,16 +91,29 @@ const AllInstruments = (props) => {
             linkText = {"Home"}
             /> */}
 
+<div class = "row">
             {
                 instrumentList.map((instrument, index)=> (
-                    <div>
-                    <Link to = {`/instruments/${instrument._id}`}>{instrument.title}</Link>
-                    <p>${instrument.price}/day</p>
-                    <p>{instrument.description}</p>
-                    <img src = {instrument.image}/>
+                    <div class = "col-lg-3 col-md-6 col-sm-6">
+                        <figure class = "card card-product-grid">
+                        <div class ="img-wrap">
+                                <img src = {instrument.image}/>
+                            </div>
+                            <figcaption class="info-wrap border-top">
+                                <Link to = {`/instruments/${instrument._id}`}>{instrument.title}</Link>
+                            <div class = "price-wrap">
+                            <p>Borrow for ${instrument.price}/day</p>
+                            </div>
+                                <p>{instrument.description}</p>
+                            </figcaption>
+                            
+                            
+                        </figure>
                     </div>
                 ))
             }
+
+</div>
 
         </div>
     )

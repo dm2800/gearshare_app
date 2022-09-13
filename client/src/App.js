@@ -7,6 +7,7 @@ import AllInstruments from './components/AllInstruments';
 import NewInstrument from './components/NewInstrument';
 import OneInstrument from './components/OneInstrument';
 import EditInstrument from './components/EditInstrument';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
