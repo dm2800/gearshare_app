@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios'; 
 import {Link, useParams, useNavigate} from "react-router-dom";
 import Header from './Header';
-import Form from './Form';
+import Form from './Form1';
+import Form1 from './Form1';
 
 
 const EditInstrument = (props)=> {
@@ -44,7 +45,7 @@ const editSubmitHandler = (e)=> {
         .then((res)=>{
             console.log(res);
             console.log(res.data);
-            navigate("/");
+            navigate("/home");
         })
         .catch((err)=>{
             console.log(err);
@@ -92,11 +93,11 @@ const editSubmitHandler = (e)=> {
 
 
 
-                <Link to ={"/"}>Home</Link>
+                <Link to ={"/home"}>Home</Link>
             </header>
             <br></br>
 {/* reusable component for Form */}
-            <Form
+            <Form1
             submitHandler= {editSubmitHandler}
             instrument={editInstrument}
             errors={errors}

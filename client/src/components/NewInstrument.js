@@ -2,8 +2,9 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Link, useParams, useNavigate} from "react-router-dom";
 import Header from './Header';
-import Form from './Form';
+import Form from './Form1';
 import Button from 'react-bootstrap/esm/Button';
+import Form1 from './Form1';
 
 
 //axios, useEffect, useState, Link
@@ -30,12 +31,13 @@ const NewInstrument = (props) => {
     const newSubmitHandler = (e)=> {
         e.preventDefault();
         axios.post("http://localhost:8000/api/instruments", 
-        newInstrument
+        newInstrument, 
+        {withCredentials: true}
         )
             .then((res)=>{
                 console.log(res);
                 console.log(res.data);
-                navigate("/");
+                navigate("/home");
             })
             .catch((err)=>{
                 console.log(err);
@@ -89,9 +91,9 @@ const NewInstrument = (props) => {
                 </div>
                 
                 </section>
-                <Link to ={"/"}>
+                <Link to ={"/home"}>
                     
-                <Button variant = "info">Home</Button>
+                <Button variant = "primary">Home</Button>
 
                 </Link>
                 
@@ -100,7 +102,7 @@ const NewInstrument = (props) => {
             
 
 {/* new Form component  */}
-            <Form
+            <Form1
             submitHandler= {newSubmitHandler}
             instrument={newInstrument}
             errors={errors}

@@ -22,6 +22,11 @@ const InstrumentSchema = new mongoose.Schema({
     image: {
         type: String,
         required: [true, "Image required."]
+    },
+
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     }
 
 }, {timestamps: true})

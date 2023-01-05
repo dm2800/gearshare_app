@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  height: 100vh;
+  background: linear-gradient(#eecab0, blue, white);
+  overflow: auto;
 }
 
 .App-logo {
@@ -46,6 +49,8 @@ img{
   flex-wrap: wrap;
 }
 
+
+
 .card{
   position: relative;
   display: flex;
@@ -60,18 +65,26 @@ img{
 
 .bg-primary {
   background-color:aquamarine;
+  color: aquamarine;
 }
 
 h1{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size:xx-large;
+  color: white;
 }
-/* 
-.navbar{
+
+
+h6{
+  color: white;
+}
+
+/* .navbar{
   display: flex;
 } */
 
 
-.nav{
+.Nav{
   text-align: center;
+  justify-items: center;
 }
