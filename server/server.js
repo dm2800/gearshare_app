@@ -17,8 +17,12 @@ require("./config/mongoose.config");
 require("./routes/instrument.routes")(app);
 require("./routes/user.routes")(app);
 
-app.listen(process.env.MY_PORT, ()=> {
-    console.log(`You are connected to port ${process.env.MY_PORT}`)
+app.listen(8000, ()=> {
+    console.log("You are connected to port 8000")
 });
+
+// app.listen(process.env.MY_PORT, ()=> {
+//     console.log(`You are connected to port ${process.env.MY_PORT}`)
+// });
 
 
