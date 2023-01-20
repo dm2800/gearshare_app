@@ -35,12 +35,12 @@ const Profile = (props) => {
                 <div key={index}>
                     <img src={instrument.image}></img>
                     <div>
-                        <Link to={`/instruments/${instrument._id}`}>
+                        <Link style = {{color:"white", fontSize:"large"}}to={`/instruments/${instrument._id}`}>
                             {instrument.title}
                         </Link>
                     </div>
-                    <p>{instrument.description}</p>
-                    <p>Borrow for ${instrument.price}/day</p>
+                    <p style={{color:"white"}}>{instrument.description}</p>
+                    <p style={{color:"white"}}>Borrow for ${instrument.price}/day</p>
                 </div>
             ))}
 

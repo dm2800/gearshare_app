@@ -83,7 +83,10 @@ h6{
   display: flex;
 } */
 
-
+.section-intro{
+  background: url('https://img.lovepik.com/background/20211021/large/lovepik-blue-abstract-background-image_401711008.jpg');
+  background-size: auto;
+}
 
 .card {
   color: blue;

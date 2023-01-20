@@ -83,7 +83,7 @@ const AllInstruments = (props) => {
                 <section class="section-intro bg-primary padding-y-lg">
                     <div class="container">
                         <h1>GearShare</h1>
-                        <h6>Lend & borrow your favorite gear.</h6>
+                        <h6>Lend & borrow your favorite gear</h6>
                     </div>
                 </section>
 
@@ -154,7 +154,7 @@ const AllInstruments = (props) => {
                                 <img src={instrument.image} />
                             </div>
                             <figcaption class="info-wrap border-top">
-                                <Link to={`/instruments/${instrument._id}`}>
+                                <Link style={{color: "white", fontFamily: "", fontWeight:"bold", fontSize:"large"}} to={`/instruments/${instrument._id}`}>
                                     {instrument.title}
                                 </Link>
                                 <div class="price-wrap">
