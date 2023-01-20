@@ -38,14 +38,14 @@ const OneInstrument = (props) => {
         <div>
             {" "}
             <header>
-                <section class="section-intro bg-primary padding-y-lg">
+            <section class="section-intro bg-primary padding-y-lg">
                     <div class="container">
                         <h1>GearShare</h1>
-                        <h4>Lend & borrow your favorite gear.</h4>
+                        <h6>Lend & borrow your favorite gear.</h6>
                     </div>
                 </section>
 
-                <Link to={"/home"} class="btn btn-info">
+                <Link to={"/home"} class="btn btn-primary">
                     Home
                 </Link>
             </header>
@@ -57,19 +57,19 @@ const OneInstrument = (props) => {
             <div>
                 <br></br>
 
-                <Button>
-                    <button>
                         <Link to={`/instruments/edit/${instrument._id}`}>
+                <Button variant = "primary">
+                   
                             Edit
-                        </Link>
-                    </button>
+                
                 </Button>
+                        </Link>
                 <br></br>
                 <br></br>
-                <Button>
-                    <button onClick={deleteInstrument}>
+                <Button onClick={deleteInstrument}>
+                    
                         Delete {instrument.title}
-                    </button>
+            
                 </Button>
                 <p>
             

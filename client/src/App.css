@@ -84,6 +84,16 @@ h6{
 } */
 
 
+
+.card {
+  color: blue;
+}
+
+.figure{
+  background-color: black;
+}
+
+
 .Nav{
   text-align: center;
   justify-items: center;

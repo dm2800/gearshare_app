@@ -8,7 +8,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
-import styled from "styled-components";
+import "../App.css";
 
 const AllInstruments = (props) => {
     const [instrumentList, setInstrumentList] = useState([]);
@@ -78,7 +78,7 @@ const AllInstruments = (props) => {
     };
 
     return (
-        <main style={{margin: "20px"}}>
+        <main style={{margin: "10px"}}>
             <header>
                 <section class="section-intro bg-primary padding-y-lg">
                     <div class="container">
@@ -100,7 +100,7 @@ const AllInstruments = (props) => {
                 <Button onClick={logout}>Logout</Button>
                 </div>
             </header>
-
+{/* 
             <Nav
                 activeKey="/home"
                 onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
@@ -141,21 +141,15 @@ const AllInstruments = (props) => {
                         Pedals & Amplifiers
                     </Nav.Link>
                 </Nav.Item>
-            </Nav>
+            </Nav> */}
 
             <br></br>
 
-            {/* <Header
-            titleText = {"GearShare"}
-            subText = {"Gear for sharing"}
-            link = {"/"}
-            linkText = {"Home"}
-            /> */}
 
             <div class="row">
                 {instrumentList.map((instrument, index) => (
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <figure class="card card-product-grid">
+                        <figure style={{backgroundColor: "rgba(255, 255, 255, 0.3)", WebkitBackdropFilter: "blur(10px)"}} class="card card-product-grid">
                             <div class="img-wrap">
                                 <img src={instrument.image} />
                             </div>
@@ -186,6 +180,4 @@ const AllInstruments = (props) => {
 
 export default AllInstruments;
 
-const main = styled.div`
-    background-color: aliceblue;
-`;
+
